@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff
+  ;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+custom-background {
+  background-color: black; /* Custom background color */
+}
+
+custom-text {
+  color: #666666; /* Custom font color for paragraph */
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+.balloons {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.balloon {
+  position: absolute;
+  bottom: -150px;
+  width: 50px;
+  height: 70px;
+  background-color: red;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: float 6s ease-in infinite;
+}
+
+.balloon.one {
+  left: 20%;
+  background-color: #ff6666;
+}
+
+.balloon.two {
+  left: 50%;
+  background-color: #66ccff;
+  animation-duration: 8s;
+}
+
+.balloon.three {
+  left: 80%;
+  background-color: #99ff99;
+  animation-duration: 7s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-1000px);
+  }
+}
